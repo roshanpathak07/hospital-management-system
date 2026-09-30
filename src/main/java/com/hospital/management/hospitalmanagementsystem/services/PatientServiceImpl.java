@@ -2,6 +2,7 @@ package com.hospital.management.hospitalmanagementsystem.services;
 
 import com.hospital.management.hospitalmanagementsystem.exceptions.PatientNotFoundException;
 import com.hospital.management.hospitalmanagementsystem.models.Patient;
+import com.hospital.management.hospitalmanagementsystem.repositories.PatientRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
