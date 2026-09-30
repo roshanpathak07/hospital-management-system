@@ -11,6 +11,12 @@ import java.util.List;
 @RequestMapping("/api/patients")
 public class PatientController {
 
+    private final PatientService patientService;
+
+    public PatientController(PatientService patientService) {
+        this.patientService = patientService;
+    }
+
     @GetMapping
     public ResponseEntity<List<Patient>> getAllPatients() {
         List<Patient> patients = patientService.getAllPatient();
