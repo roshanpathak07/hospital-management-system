@@ -1,6 +1,7 @@
 package com.hospital.management.hospitalmanagementsystem.controllers;
 
 import com.hospital.management.hospitalmanagementsystem.models.Patient;
+import com.hospital.management.hospitalmanagementsystem.services.PatientService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +20,7 @@ public class PatientController {
 
     @GetMapping
     public ResponseEntity<List<Patient>> getAllPatients() {
-        List<Patient> patients = patientService.getAllPatient();
+        List<Patient> patients = patientService.getAllPatients();
         return new ResponseEntity<>(patients, HttpStatus.OK);
     }
 
