@@ -17,4 +17,13 @@ public class GlobalExceptionHandler {
                 HttpStatus.NOT_FOUND
         );
     }
+
+    @ExceptionHandler(DoctorNotFoundException.class)
+    public ResponseEntity<String> handleDoctorNotFoundException(
+            DoctorNotFoundException e) {
+        return new ResponseEntity<>(
+                e.getMessage(),
+                HttpStatus.NOT_FOUND
+        );
+    }
 }
