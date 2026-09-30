@@ -35,4 +35,14 @@ public class GlobalExceptionHandler {
                 HttpStatus.NOT_FOUND
         );
     }
+
+    @ExceptionHandler(BillNotFoundException.class)
+    public ResponseEntity<String> handleBillNotFoundException(
+            BillNotFoundException e) {
+
+        return new ResponseEntity<>(
+                e.getMessage(),
+                HttpStatus.NOT_FOUND
+        );
+    }
 }
