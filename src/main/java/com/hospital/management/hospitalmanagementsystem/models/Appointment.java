@@ -1,10 +1,10 @@
 package com.hospital.management.hospitalmanagementsystem.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Builder
@@ -16,8 +16,17 @@ public class Appointment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long billId;
-    private Long doctorId;
-    private Long patientId;
-    private String Date;
+    private Long appointmentId;
+    private LocalDate appointmentDate;
+    private LocalTime appointmentTime;
+    private String reason;
+    private String status;
+
+    @ManyToOne
+    @JoinColumn(name = "patient_id")
+    private Patient patient;
+
+    @ManyToOne
+    @JoinColumn(name = "doctor_id")
+    private Doctor doctor;
 }
